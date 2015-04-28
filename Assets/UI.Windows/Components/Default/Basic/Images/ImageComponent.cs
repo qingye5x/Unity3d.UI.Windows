@@ -6,7 +6,7 @@ using UnityEngine.UI.Windows.Extensions;
 
 namespace UnityEngine.UI.Windows.Components {
 
-	public class ImageComponent : WindowComponent {
+	public class ImageComponent : WindowComponent, IImageComponent {
 		
 		[HideInInspector][SerializeField]
 		public Image image;
@@ -48,8 +48,8 @@ namespace UnityEngine.UI.Windows.Components {
 			
 			if (this.gameObject.activeSelf == false) return;
 
-			this.image = this.GetComponent<Image>();
-			this.rawImage = this.GetComponent<RawImage>();
+			if (this.image == null) this.image = this.GetComponent<Image>();
+			if (this.rawImage == null) this.rawImage = this.GetComponent<RawImage>();
 			
 		}
 		#endif

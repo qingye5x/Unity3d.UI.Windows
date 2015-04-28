@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace UnityEngine.UI.Windows {
+namespace UnityEngine.UI.Windows.Animations {
 
 	public class WindowAnimationBase : ScriptableObject {
 
@@ -13,7 +13,7 @@ namespace UnityEngine.UI.Windows {
 
 			public void ApplyInputParameters(WindowComponentBase layoutElement) {
 
-				var component = layoutElement.gameObject.AddComponent(this.transition.GetType().Name + "Parameters") as TransitionInputParameters;
+				var component = layoutElement.gameObject.AddComponent(System.Type.GetType(this.transition.GetType().Name + "Parameters")) as TransitionInputParameters;
 				component.SetDefaultParameters(this.GetDefaultInputParameters());
 				layoutElement.animationInputParams.Add(component);
 

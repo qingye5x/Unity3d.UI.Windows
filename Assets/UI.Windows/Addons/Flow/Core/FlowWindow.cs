@@ -6,6 +6,7 @@ using System.Text.RegularExpressions;
 using System.Globalization;
 using ME;
 using UnityEngine.UI.Windows.Extensions;
+using UnityEngine.UI.Windows.Types;
 
 namespace UnityEngine.UI.Windows.Plugins.Flow {
 
@@ -41,7 +42,7 @@ namespace UnityEngine.UI.Windows.Plugins.Flow {
 
 		}
 
-		private const int STATES_COUNT = 5;
+		private const int STATES_COUNT = 3;
 
 		public int id;
 		public string title = string.Empty;

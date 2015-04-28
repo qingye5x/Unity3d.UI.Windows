@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI.Windows;
 using UnityEngine.UI;
+using UnityEngine.UI.Windows.Types;
 
 namespace UnityEngine.UI.Windows.Components {
 
@@ -31,8 +32,8 @@ namespace UnityEngine.UI.Windows.Components {
 
 			if (state == true) {
 
-				this.infoWindow = WindowSystem.Show<UIWindowExampleTip>(this.tipText) as TipWindowType;
-				this.infoWindow.OnHover(this.transform as RectTransform);
+				this.infoWindow = WindowSystem.Show<TextTipWindowType>(this.tipText) as TipWindowType;
+				if (this.infoWindow != null) this.infoWindow.OnHover(this.transform as RectTransform);
 
 			} else {
 
